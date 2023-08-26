@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    background-color: #1e213f;
+    /* min-height: 100vh; */
+}
+
+.timer-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.header {
+    font-weight: 700;
+    margin: 0 auto;
+    color: #d7e0ff;
+    text-align: center;
+    margin: 2.4375rem 0;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+nav {
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.pomodoro-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    width: 24rem;
+    height: 3.9375rem;
+    border-radius: 1.9688rem;
+    background-color: #161932;
+}
+
+.pomodoro-menu li {
+    color: #d7e0ff;
+}
+
+.pomodoro-menu li:hover {
+    cursor: pointer;
+}
+
+
+.pomodoro-container {
+    background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+    box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+    border-radius: 50%;
+    width: 18.75rem;
+    height: 18.75rem;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.inner-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -45%;
+    margin-top: -45%;
+    background-color: #161932;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    color: #d7e0ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.time-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: -4px;
+}
+
+
+.pause-button {
+    margin-top: 1rem;
+    text-align: center;
+    padding-left: 13.5px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    letter-spacing: 0.8203rem;
+}
+
+.svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.pomodoro-container svg:hover {
+    cursor: pointer;
+}
+
+
+.circle-bg {
+    fill: none;
+    stroke-width: 0.625rem;
+    stroke: #161932;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 0.7188rem;
+    stroke: #f87070;
+}
+
