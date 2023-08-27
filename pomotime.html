@@ -44,26 +44,29 @@
 
         <main class="pomodoro-container">
             <div class="inner-container">
-                <div class="time-container">
-                    <div class="time-left">25</div>
-                    <div class="colon">:</div>
-                    <div class="time-right">00</div>
+
+                <svg x="0px" y="0px" viewBox="0 0 400 400" xml:space="preserve" class="svg">
+
+                    <g class="circle-bg">
+                        <circle class="circle" cx="200" cy="200" r="170" />
+                    </g>
+
+                </svg>
+
+                <div class="time-wrapper">
+                    <div class="time-container"></div>
+                    <div class="pause-button"></div>
                 </div>
-                <div class="pause-button">START</div>
             </div>
 
-            <svg x="0px" y="0px" viewBox="0 0 400 400" xml:space="preserve" class="svg">
-                <circle class="circle-bg" cx="200" cy="200" r="159.5" transform="rotate(270 200 200)" />
-                <circle class="circle" cx="200" cy="200" r="159.5" stroke-linecap="round"
-                    transform="rotate(270 200 200)" />
-            </svg>
+
         </main>
         <footer class="settings">
             <img src="./assets/icon-settings.svg" alt="open settings" class="open-modal" />
         </footer>
 
     </div>
-<script src="./pomotime.js"></script>
+    <script src="./pomotime.js"></script>
 </body>
 
 </html>
