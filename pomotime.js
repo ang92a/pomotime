@@ -8,9 +8,9 @@ const timeContainer = document.querySelector(".time-container");
 
 // модальное окно для настроек
 let modalOptions = {
-    color: "tomato",
-    font: "kumbahSans",
-    time: [{ shortBreakTime: 5, check: false }, { longBreakTime: 9, check: false }, { pomodoroMinutes: 0.1, check: false }]
+  color: "tomato",
+  font: "kumbahSans",
+  time: { shortBreakTime: 5, longBreakTime: 9, pomodoroMinutes: 0.1 },
 };
 
 //состояние приложения изначальное
@@ -42,6 +42,7 @@ function updateTimer() {
     totalTime--;
     if (totalTime < 0) {
       clearInterval(interval);
+      pauseButton.textContent = "START";
       return;
     }
     const formattedTime = formatTimeLeft(totalTime);
