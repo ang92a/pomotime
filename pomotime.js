@@ -7,27 +7,30 @@ const pomodoroContainer = document.querySelector(".pomodoro-container");
 const timeContainer = document.querySelector(".time-container");
 
 // модальное окно для настроек
-let modalOptions = {
-  color: "tomato",
-  font: "kumbahSans",
-  time: { shortBreakTime: 5, longBreakTime: 9, pomodoroMinutes: 0.1 },
-};
+let time = [
+  { name: "shortBreakTime", minut: 5, check: false },
+  { name: "longBreakTime", minut: 9, check: false },
+  { name: "pomodoroMinutes", minut: 0.1, check: false },
+];
 
-//состояние приложения изначальное
+// состояние приложения изначальное
 
-let mode = "pomodoroMinutes";
-let totalTime = modalOptions.time[mode] * 60; //в секундах в зависимости от выбранного интервала
+let mode = "pomodoroMinutes"; // первоначально mode равен "pomodoroMinutes"
+let timeNum = time.find((el) => el.name === mode);
+let totalTime = timeNum.minut * 60; //в секундах в зависимости от выбранного интервала
 let isPaused = true; // Флаг паузы
 let interval = null; // Идентификатор интервала
 
 //1. отрисовка при загрузки страницы
-document.addEventListener("DOMContentLoaded", () => {
-  timeContainer.textContent = formatTimeLeft(totalTime);
-  pauseButton.textContent = "START";
-});
+function render() {
+  document.addEventListener("DOMContentLoaded", () => {
+    timeContainer.textContent = formatTimeFirst(totalTime);
+    pauseButton.textContent = "START";
+  });
+}
 
-//2.отрисовка времени
-function formatTimeLeft(time) {
+//2.отрисовка времени в формате мм:сс
+function formatTimeFirst(time) {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
   if (seconds < 10) {
@@ -45,7 +48,7 @@ function updateTimer() {
       pauseButton.textContent = "START";
       return;
     }
-    const formattedTime = formatTimeLeft(totalTime);
+    const formattedTime = formatTimeFirst(totalTime);
     timeContainer.textContent = formattedTime;
   }
 }
@@ -63,6 +66,7 @@ pauseButton.addEventListener("click", () => {
 });
 
 // Инициализация таймера
+render();
 updateTimer();
 
 // function togglePause() {
